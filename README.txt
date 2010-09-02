@@ -1,7 +1,7 @@
 = image_size -- measure image size(GIF, PNG, JPEG ,,, etc)
 
 measure image (GIF, PNG, JPEG ,,, etc) size code by Pure Ruby
-["PCX", "PSD", "XPM", "TIFF", "XBM", "PGM", "PBM", "PPM", "BMP", "JPEG", "PNG", "GIF", "SWF"]
+["PSD", "XPM", "TIFF", "XBM", "PGM", "PBM", "PPM", "BMP", "JPEG", "PNG", "GIF", "SWF"]
 
 == Download
 

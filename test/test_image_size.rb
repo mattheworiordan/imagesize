@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require './test/test_helper.rb'
 
 class TestImageSize < Test::Unit::TestCase
 
@@ -6,7 +6,7 @@ class TestImageSize < Test::Unit::TestCase
 		@files = ['4_1_2.gif', '2-4-7.png', 'tokyo_tower.jpg', 'bmp.bmp', 
 		          'ppm.ppm', 'pgm.pgm', 'pbm.pbm', 
 		          'cursor.xbm', 'tiff.tiff', 'test.xpm', 
-		          'tower_e.gif.psd', 'pcx.pcx', 'detect.swf']
+		          'tower_e.gif.psd', 'detect.swf']
 		@results = [
 		  ['GIF' ,668,481],
 		  ['PNG' ,640,532],
@@ -19,7 +19,6 @@ class TestImageSize < Test::Unit::TestCase
 		  ['TIFF', 64, 64],
 		  ['XPM' , 32, 32],
 		  ['PSD' , 20, 20],
-		  ['PCX' , 70, 60],
 		  ['SWF' ,450,200],
 		]
 	end

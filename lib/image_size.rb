@@ -18,7 +18,6 @@ class ImageSize
     TIFF = "TIFF"
     XPM  = "XPM"
     PSD  = "PSD"
-    PCX  = "PCX"
     SWF  = "SWF"
   end
 
@@ -132,7 +131,6 @@ class ImageSize
     elsif img_top =~ /\/\* XPM \*\//                 then Type::XPM
     elsif img_top[0, 4] == "8BPS"                    then Type::PSD
     elsif img_top[1, 2] == "WS"                      then Type::SWF
-    elsif img_top[0] == 10                           then Type::PCX
     else Type::OTHER
     end
   end
@@ -249,14 +247,6 @@ class ImageSize
     end
 
     raise "#{if width.nil? then 'width not defined.' end} #{if height.nil? then 'height not defined.' end}" if width.nil? || height.nil?
-    [width, height]
-  end
-
-  def measure_PCX(img_io)
-    header = img_io.read_o(128)
-    head_part = header.unpack('C4S4')
-    width = head_part[6] - head_part[4] + 1
-    height = head_part[7] - head_part[5] + 1
     [width, height]
   end
 
