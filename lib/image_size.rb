@@ -261,7 +261,7 @@ class ImageSize
       raise("This file is not SWF.")
     end
 
-    bit_length = Integer("0b#{header.unpack('@8B5')}")
+    bit_length = Integer("0b#{header.unpack('@8B5')[0]}")
     header << img_io.read_o(bit_length*4/8+1)
     str = header.unpack("@8B#{5+bit_length*4}")[0]
     last = 5
